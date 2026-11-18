@@ -1,0 +1,358 @@
+/* ==========================================================================
+   BALANCE BITE — Clean Immersive Scroll Animation + Website
+   ========================================================================== */
+
+:root {
+  --bg-main: #0c0d0e;
+  --bg-card: rgba(22, 24, 28, 0.75);
+  --bg-card-hover: rgba(30, 34, 40, 0.85);
+  --bg-glass: rgba(18, 20, 24, 0.65);
+  --border-glass: rgba(255, 255, 255, 0.08);
+  --border-glass-bright: rgba(255, 255, 255, 0.16);
+
+  --accent-amber: #f59e0b;
+  --accent-amber-glow: rgba(245, 158, 11, 0.35);
+  --accent-green: #10b981;
+  --accent-green-glow: rgba(16, 185, 129, 0.3);
+
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-tertiary: #64748b;
+
+  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Plus Jakarta Sans", "Inter", system-ui, sans-serif;
+  --font-mono: "SF Mono", "Menlo", "Monaco", "Consolas", monospace;
+
+  --ease-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+}
+
+/* Shared navigation glass treatment across all site pages. */
+body > header,
+#site-header {
+  background: rgba(251, 249, 246, 0.64) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.72);
+  box-shadow: 0 10px 32px rgba(32, 52, 37, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.82);
+  -webkit-backdrop-filter: saturate(185%) blur(24px);
+  backdrop-filter: saturate(185%) blur(24px);
+}
+
+.mobile-nav-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  flex: 0 0 auto;
+  border: 1px solid rgba(32, 78, 43, 0.16);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.56);
+  color: #204e2b;
+  cursor: pointer;
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+}
+
+.mobile-nav-panel {
+  display: none;
+  position: fixed;
+  z-index: 60;
+  top: 88px;
+  right: 16px;
+  width: min(280px, calc(100vw - 32px));
+  padding: 10px;
+  flex-direction: column;
+  gap: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.78);
+  border-radius: 20px;
+  background: rgba(251, 249, 246, 0.82);
+  box-shadow: 0 18px 48px rgba(25, 42, 29, 0.2), inset 0 1px 0 #fff;
+  -webkit-backdrop-filter: saturate(185%) blur(24px);
+  backdrop-filter: saturate(185%) blur(24px);
+}
+
+.mobile-nav-panel.open { display: flex; }
+.mobile-nav-panel a {
+  padding: 12px 14px;
+  border-radius: 12px;
+  color: #204e2b;
+  font-weight: 600;
+  text-decoration: none;
+}
+.mobile-nav-panel a:hover,
+.mobile-nav-panel a[aria-current="page"] { background: rgba(56, 102, 65, 0.12); }
+
+@media (min-width: 1024px) {
+  .mobile-nav-toggle,
+  .mobile-nav-panel { display: none !important; }
+}
+
+/* ==========================================================================
+   PRELOADER
+   ========================================================================== */
+#preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: radial-gradient(circle at center, #17181c 0%, #0a0b0c 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.8s var(--ease-smooth), visibility 0.8s;
+  padding: 24px;
+}
+
+#preloader.loaded {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.preloader-box {
+  max-width: 440px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.preloader-icon-wrap {
+  width: 76px;
+  height: 76px;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.15), rgba(16, 185, 129, 0.15));
+  border: 1px solid var(--border-glass-bright);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4), 0 0 24px var(--accent-amber-glow);
+}
+
+.preloader-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+  background: linear-gradient(to right, #ffffff, #d8dbe2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.preloader-subtitle {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-bottom: 32px;
+}
+
+.preloader-bar-wrap {
+  width: 100%;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.preloader-bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #f59e0b, #10b981, #f59e0b);
+  background-size: 200% 100%;
+  border-radius: var(--radius-full);
+  transition: width 0.15s ease-out;
+  animation: shine 2s linear infinite;
+}
+
+@keyframes shine {
+  0% { background-position: 100% 0; }
+  100% { background-position: -100% 0; }
+}
+
+.preloader-meta {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 0.85rem;
+  font-family: var(--font-mono);
+  color: var(--text-tertiary);
+}
+
+.preloader-percent {
+  color: var(--accent-amber);
+  font-weight: 600;
+}
+
+.preloader-skip-btn {
+  margin-top: 24px;
+  padding: 8px 18px;
+  font-size: 0.8rem;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-full);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.2s;
+  display: none;
+}
+
+.preloader-skip-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+}
+
+/* ==========================================================================
+   CANVAS & SCROLL TRACK
+   ========================================================================== */
+#animation-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: high-quality;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* ==========================================================================
+   INITIAL HERO OVERLAY — large "Balance Bite" title remains through the sequence
+   ========================================================================== */
+.initial-hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  pointer-events: none;
+  transition: none;
+  /* Gradient overlay so text pops over the first frame */
+  background: radial-gradient(ellipse at center, rgba(12, 13, 14, 0.65) 0%, rgba(12, 13, 14, 0.4) 50%, transparent 100%);
+}
+
+.initial-hero-overlay.animating {
+  background: none;
+}
+
+.initial-hero-overlay.animating > :not(.initial-title) {
+  display: none;
+}
+
+.initial-kicker {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  opacity: 0.65;
+  margin-bottom: 10px;
+  color: var(--accent-amber);
+  font-weight: 600;
+}
+
+.initial-title {
+  font-size: clamp(4.25rem, 10vw, 9rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+  max-width: 94vw;
+  filter: drop-shadow(0 3px 18px rgba(0, 0, 0, 0.75));
+  background: linear-gradient(to bottom right, #ffffff 30%, #c0c0c0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.initial-subtitle {
+  font-size: 1.05rem;
+  opacity: 0.55;
+  margin-top: 10px;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  max-width: 400px;
+}
+
+/* Scroll-down mouse animation */
+.scroll-prompt {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  opacity: 0.45;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.scroll-mouse-icon {
+  width: 22px;
+  height: 36px;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 14px;
+  position: relative;
+}
+
+.scroll-mouse-wheel {
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3px;
+  height: 7px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 3px;
+  animation: wheel-scroll 1.6s infinite ease-out;
+}
+
+@keyframes wheel-scroll {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, 10px);
+  }
+}
+
+/* ==========================================================================
+   SITE HEADER — Always visible
+   ========================================================================== */
+#site-header {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  pointer-events: auto !important;
+  transition: none !important;
+}
+
+/* ==========================================================================
+   RESPONSIVE ADJUSTMENTS
+   ========================================================================== */
+@media (max-width: 768px) {
+  .initial-title {
+    font-size: clamp(3rem, 11vw, 5rem);
+  }
+
+  .initial-subtitle {
+    font-size: 0.9rem;
+    max-width: 300px;
+  }
+
+  .initial-kicker {
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .initial-title {
+    font-size: clamp(2.5rem, 11vw, 3.5rem);
+  }
+}

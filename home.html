@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"surface-container-highest":"#e4e2df","on-surface-variant":"#414941","outline-variant":"#c1c9be","primary-fixed-dim":"#a0d3a5","error":"#ba1a1a","on-primary":"#ffffff","surface-dim":"#dbdad7","secondary-fixed":"#ffdbce","surface-container-low":"#f5f3f0","surface-container":"#efeeeb","tertiary-fixed":"#d2ed95","error-container":"#ffdad6","tertiary-fixed-dim":"#b6d07c","tertiary-container":"#4e641d","inverse-surface":"#30312f","on-primary-container":"#afe2b3","surface-bright":"#fbf9f6","on-secondary-fixed":"#370e00","primary-fixed":"#bcefc0","background":"#fbf9f6","on-tertiary-fixed-variant":"#394d06","on-tertiary-container":"#c5e08a","primary":"#204e2b","outline":"#727970","primary-container":"#386641","on-tertiary":"#ffffff","on-error":"#ffffff","surface":"#fbf9f6","on-background":"#1b1c1a","surface-variant":"#e4e2df","secondary-container":"#fe9163","surface-container-high":"#eae8e5","on-tertiary-fixed":"#141f00","surface-container-lowest":"#ffffff","on-secondary":"#ffffff","on-error-container":"#93000a","on-secondary-container":"#752902","tertiary":"#374c04","inverse-on-surface":"#f2f0ed","secondary-fixed-dim":"#ffb598","surface-tint":"#3a6843","inverse-primary":"#a0d3a5","on-surface":"#1b1c1a","secondary":"#9b441d","on-primary-fixed-variant":"#22502d","on-secondary-fixed-variant":"#7c2e06","on-primary-fixed":"#00210a"},borderRadius:{DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem",full:"9999px"},spacing:{"space-md":"1rem","space-sm":"0.5rem","margin-mobile":"1rem",gutter:"1rem",margin:"1.5rem","space-xs":"0.25rem","space-lg":"1.5rem","space-xl":"2.5rem","gutter-mobile":"0.75rem"},fontFamily:{"headline-sm":["Plus Jakarta Sans"],"display-lg-mobile":["Plus Jakarta Sans"],"label-lg":["Plus Jakarta Sans"],"body-md":["Plus Jakarta Sans"],"label-sm":["Plus Jakarta Sans"],"body-sm":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"body-lg":["Plus Jakarta Sans"],"display-lg":["Plus Jakarta Sans"],"label-md":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"]},fontSize:{"headline-sm":["18px",{lineHeight:"24px",fontWeight:"600"}],"display-lg-mobile":["32px",{lineHeight:"38px",letterSpacing:"-0.015em",fontWeight:"700"}],"label-lg":["14px",{lineHeight:"18px",letterSpacing:"0.01em",fontWeight:"600"}],"body-md":["14px",{lineHeight:"20px",fontWeight:"400"}],"label-sm":["11px",{lineHeight:"14px",letterSpacing:"0.03em",fontWeight:"600"}],"body-sm":["12px",{lineHeight:"16px",fontWeight:"400"}],"headline-md":["22px",{lineHeight:"28px",letterSpacing:"-0.005em",fontWeight:"600"}],"body-lg":["16px",{lineHeight:"24px",fontWeight:"400"}],"display-lg":["40px",{lineHeight:"48px",letterSpacing:"-0.02em",fontWeight:"700"}],"label-md":["12px",{lineHeight:"16px",letterSpacing:"0.02em",fontWeight:"600"}],"headline-lg":["28px",{lineHeight:"34px",letterSpacing:"-0.01em",fontWeight:"700"}]}}}}</script><link rel="stylesheet" href="style.css"/></head><body class="bg-background font-body-md text-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 z-50 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(56,42,30,0.06)]"><div class="h-20 max-w-[1200px] mx-auto px-margin flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-lg"><a class="flex items-center gap-space-xs text-primary transition-transform hover:scale-[1.02]" data-path="home" href="#"><span class="material-symbols-outlined text-[30px] text-primary">potted_plant</span><span class="font-headline-md text-headline-md tracking-tight text-primary">Balance Bite</span></a><div class="hidden xl:flex items-center gap-space-xs bg-surface-container-low px-space-md py-space-xs rounded-full shadow-[0_1px_4px_rgba(56,42,30,0.04)]"><span class="material-symbols-outlined text-secondary text-[18px]">location_on</span><div class="flex flex-col"><span class="font-label-sm text-label-sm text-on-surface-variant">Delivering to</span><span class="font-label-md text-label-md text-on-surface">Downtown 10001</span></div><span class="material-symbols-outlined text-on-surface-variant text-[16px]">expand_more</span></div></div><nav class="hidden lg:flex items-center gap-space-xs" data-active-classes="bg-primary-container text-on-primary font-bold rounded-full shadow-[0_2px_8px_rgba(32,78,43,0.15)]"><a aria-current="page" class="px-space-md py-space-xs transition-all bg-primary-container text-on-primary font-bold rounded-full shadow-[0_2px_8px_rgba(32,78,43,0.15)]" data-path="home" href="#">Home</a><a class="px-space-md py-space-xs rounded-full font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="menu-and-bowls" href="#">Menu &amp; Bowls</a><a class="px-space-md py-space-xs rounded-full font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="build-your-own" href="#">Build Your Own</a><a class="px-space-md py-space-xs rounded-full font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="our-philosophy" href="#">Our Philosophy</a><a class="px-space-md py-space-xs rounded-full font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="catering" href="#">Catering</a></nav><button class="mobile-nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-navigation" aria-label="Open navigation menu"><span class="material-symbols-outlined">menu</span></button><div class="mobile-nav-panel" id="mobile-navigation"><a data-path="home" href="#">Home</a><a data-path="menu-and-bowls" href="#">Menu &amp; Bowls</a><a data-path="build-your-own" href="#">Build Your Own</a><a data-path="our-philosophy" href="#">Our Philosophy</a><a data-path="catering" href="#">Catering</a></div><div class="flex items-center gap-space-md"><div class="hidden md:flex items-center bg-surface-container-lowest rounded-full px-space-md py-space-xs shadow-[0_1px_6px_rgba(56,42,30,0.05)] focus-within:shadow-[0_0_0_2px_#386641]"><span class="material-symbols-outlined text-on-surface-variant text-[20px] mr-space-xs">search</span><input class="bg-transparent font-body-sm text-body-sm text-on-surface placeholder:text-on-surface-variant focus:outline-none w-36 lg:w-44" placeholder="Search bowls, proteins..." type="text"/></div><a class="relative p-space-sm rounded-full bg-surface-container-low hover:bg-surface-container-high hover:text-on-surface text-on-surface transition-colors" data-path="cart" href="#"><span class="material-symbols-outlined text-[22px]">local_mall</span><span class="absolute -top-1 -right-1 w-5 h-5 rounded-full bg-secondary text-on-secondary font-label-sm text-label-sm flex items-center justify-center shadow-sm">3</span></a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 bg-background"><div class="flex flex-col w-full">
+<!-- Top Subtle Banner -->
+<section class="w-full bg-primary-container text-on-primary py-space-xs px-margin">
+<div class="max-w-[1200px] mx-auto flex items-center justify-between font-label-sm text-label-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[16px] text-tertiary-fixed">eco</span>
+<span>Spring Harvest Release: Fresh Oregon asparagus &amp; ramp tahini drizzle now in rotation</span>
+</div>
+<div class="hidden md:flex items-center gap-space-md">
+<span class="opacity-90">Free emission-free doorstep drop on orders of ₹499+</span>
+<span class="font-bold underline cursor-pointer hover:text-tertiary-fixed transition-colors">See Delivery Zones</span>
+</div>
+</div>
+</section>
+<!-- Hero Section -->
+<section class="w-full py-space-xl lg:py-24 relative overflow-hidden bg-gradient-to-b from-surface via-surface-container-low/40 to-surface">
+<!-- Ambient organic gradient glow -->
+<div class="absolute -top-32 -left-32 w-96 h-96 rounded-full bg-tertiary-fixed-dim/20 blur-3xl pointer-events-none"></div>
+<div class="absolute top-1/2 -right-40 w-96 h-96 rounded-full bg-secondary-fixed/25 blur-3xl pointer-events-none"></div>
+<div class="max-w-[1200px] mx-auto px-margin relative z-10">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center">
+<!-- Left Content -->
+<div class="lg:col-span-6 flex flex-col gap-space-md">
+<div class="inline-flex items-center gap-space-xs self-start bg-surface-container-high px-space-md py-1 rounded-full shadow-sm">
+<span class="flex h-2 w-2 rounded-full bg-secondary"></span>
+<span class="font-label-sm text-label-sm text-on-surface uppercase tracking-wider">Chef's Signature • Spring Batch</span>
+</div>
+<h1 class="font-display-lg text-display-lg text-on-surface tracking-tight leading-tight">
+            Fuel Your Day with <span class="text-primary italic font-serif">Real, Whole</span> Food.
+          </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
+            Clean energy crafted from sustainably raised organic greens, slow-roasted free-range chicken, ancient Andean quinoa, and cold-pressed citrus vinegars. Nourishment served without compromise.
+          </p>
+<!-- Customer rating badge -->
+<div class="flex items-center gap-space-sm bg-surface-container-lowest/80 backdrop-blur px-space-md py-space-xs rounded-xl shadow-[0_2px_12px_rgba(56,42,30,0.04)] w-fit">
+<div class="flex text-secondary-container">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface">4.9 / 5.0</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">from 2,400+ conscious foodies</span>
+</div>
+<!-- CTAs -->
+<div class="flex flex-wrap items-center gap-space-md pt-space-xs">
+<a class="inline-flex items-center gap-space-xs bg-primary text-on-primary font-label-lg text-label-lg px-space-lg py-3 rounded-full shadow-[0_8px_20px_rgba(32,78,43,0.22)] hover:bg-primary-container hover:shadow-[0_12px_24px_rgba(32,78,43,0.3)] transition-all" data-path="menu-and-bowls" href="#">
+<span>Order Signature Bowl</span>
+<span class="font-body-md text-body-md opacity-80">•</span>
+<span class="text-tertiary-fixed font-bold">₹390</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+<a class="inline-flex items-center gap-space-xs bg-surface-container-lowest text-on-surface hover:bg-surface-container font-label-lg text-label-lg px-space-lg py-3 rounded-full shadow-[0_2px_8px_rgba(56,42,30,0.06)] transition-all" data-path="build-your-own" href="#">
+<span class="material-symbols-outlined text-secondary text-[20px]">tune</span>
+<span>Build Custom Bowl</span>
+</a>
+</div>
+<!-- Quick Trust Meta -->
+<div class="grid grid-cols-3 gap-space-sm pt-space-sm border-t border-transparent">
+<div class="flex items-center gap-space-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-[18px]">verified</span>
+<span class="font-label-sm text-label-sm">Non-GMO Certified</span>
+</div>
+<div class="flex items-center gap-space-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-[18px]">cloud_download</span>
+<span class="font-label-sm text-label-sm">25-Min Fresh Drop</span>
+</div>
+<div class="flex items-center gap-space-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-[18px]">nature</span>
+<span class="font-label-sm text-label-sm">Zero Plastic</span>
+</div>
+</div>
+</div>
+<!-- Right Hero Visual with Floating Nutrient Pills -->
+<div class="lg:col-span-6 relative flex justify-center items-center">
+<!-- Soft ambient ring behind bowl -->
+<div class="w-[360px] h-[360px] sm:w-[440px] sm:h-[440px] rounded-full bg-surface-container-high/80 absolute -z-0 shadow-inner"></div>
+<!-- Bowl Central Image -->
+<div class="relative z-10 group rounded-3xl overflow-hidden shadow-[0_20px_45px_-10px_rgba(56,42,30,0.22)] bg-surface-container-lowest max-w-[430px] w-full">
+<img class="w-full h-[470px] object-cover object-center transition-transform duration-700 group-hover:scale-105" data-alt="Overhead eye-level close-up of a warm artisanal handcrafted coconut wooden bowl filled with sliced golden-seared tender chicken breast sprinkled with toasted white sesame seeds, organic steamed Andean fluffy quinoa, bright green diced creamy avocado chunks, and charred tender broccoli florets on a white rustic wooden table next to folded linen and a steel fork." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBt_1ojyDBNli9I1YDlxo1l183G7lkGMxv_AmpY_F0Yi3x73uVtIFU735cvSpiLwTUQ2CSaLh405LPa50WTUICFPe7KGz-opxPScsfVGs7jty9VpYkty34tHcPIkLUiUVoOF8I4I6V-3DNHBBaTL3-wpsOI2Z0Wjmk2DxvUxtZOLfdjB5AMv8e6frxl8t9-0CqaION66DJ9HVFEmdeT6qgI-K6qBJSm8WGV4Ka2pQWk"/>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/60 via-transparent to-transparent"></div>
+<div class="absolute bottom-4 left-4 right-4 flex items-center justify-between text-on-primary">
+<div>
+<span class="font-label-sm text-label-sm text-tertiary-fixed uppercase font-bold tracking-wider">Most Loved</span>
+<p class="font-headline-sm text-headline-sm">Warm Quinoa &amp; Chicken</p>
+</div>
+<span class="font-headline-md text-headline-md font-bold text-tertiary-fixed">₹390</span>
+</div>
+</div>
+<!-- Floating Badge 1: 42g Protein (Top Right) -->
+<div class="absolute -top-4 -right-2 sm:right-4 z-20 bg-surface-container-lowest/95 backdrop-blur-md px-space-md py-space-xs rounded-2xl shadow-[0_8px_24px_rgba(56,42,30,0.12)] flex items-center gap-space-xs animate-bounce" style="animation-duration: 4s;">
+<div class="w-8 h-8 rounded-full bg-secondary-fixed flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[18px]">fitness_center</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg font-bold text-on-surface">42g Protein</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Pasture-Raised</span>
+</div>
+</div>
+<!-- Floating Badge 2: 580 kcal (Bottom Left) -->
+<div class="absolute -bottom-4 -left-2 sm:left-4 z-20 bg-surface-container-lowest/95 backdrop-blur-md px-space-md py-space-xs rounded-2xl shadow-[0_8px_24px_rgba(56,42,30,0.12)] flex items-center gap-space-xs">
+<div class="w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">bolt</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg font-bold text-on-surface">580 Kcal</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Slow-Burn Fuel</span>
+</div>
+</div>
+<!-- Floating Badge 3: 100% Organic & Gluten-Free (Top Left) -->
+<div class="hidden sm:flex absolute top-16 -left-6 z-20 bg-surface-container-lowest/95 backdrop-blur-md px-space-sm py-1.5 rounded-full shadow-[0_8px_20px_rgba(56,42,30,0.08)] items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[16px]">check_circle</span>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">100% Gluten-Free</span>
+</div>
+<!-- Floating Badge 4: Handcrafted Vessel (Bottom Right) -->
+<div class="hidden sm:flex absolute bottom-20 -right-6 z-20 bg-surface-container-lowest/95 backdrop-blur-md px-space-sm py-1.5 rounded-full shadow-[0_8px_20px_rgba(56,42,30,0.08)] items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[16px]">potted_plant</span>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Reclaimed Coconut Shell</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Value Proposition Grid (4 columns) -->
+<section id="philosophy" class="w-full py-space-xl bg-surface-container-lowest">
+<div class="max-w-[1200px] mx-auto px-margin">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<!-- Card 1 -->
+<div class="p-space-lg rounded-2xl bg-surface-container-low/20 flex flex-col gap-space-sm transition-transform hover:-translate-y-1">
+<div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[26px]">agriculture</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-on-surface">Farm-Fresh Harvest</span>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Grown by regenerative partners within 120 miles. Delivered from soil to prep station in under 24 hours.
+          </p>
+<span class="font-label-sm text-label-sm text-primary font-bold mt-auto flex items-center gap-1">
+            Explore 14 Partner Farms <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</span>
+</div>
+<!-- Card 2 -->
+<div class="p-space-lg rounded-2xl bg-surface-container-low/20 flex flex-col gap-space-sm transition-transform hover:-translate-y-1">
+<div class="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[26px]">water_drop</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-on-surface">Zero Added Cane Sugar</span>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Every house glaze, citrus vinaigrette, and creamy dressing is sweetened purely by dates and ripe orchard fruit.
+          </p>
+<span class="font-label-sm text-label-sm text-secondary font-bold mt-auto flex items-center gap-1">
+            Ingredient Transparency <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</span>
+</div>
+<!-- Card 3 -->
+<div class="p-space-lg rounded-2xl bg-surface-container-low/20 flex flex-col gap-space-sm transition-transform hover:-translate-y-1">
+<div class="w-12 h-12 rounded-xl bg-tertiary-container/10 flex items-center justify-center text-tertiary-container">
+<span class="material-symbols-outlined text-[26px]">nature_people</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-on-surface">Reclaimed Coconut Bowls</span>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Dine in-house or keep our handcrafted coconut shells. 100% biodegradable and zero microplastic leaching.
+          </p>
+<span class="font-label-sm text-label-sm text-tertiary-container font-bold mt-auto flex items-center gap-1">
+            Our Circular Mission <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</span>
+</div>
+<!-- Card 4 -->
+<div class="p-space-lg rounded-2xl bg-surface-container-low/20 flex flex-col gap-space-sm transition-transform hover:-translate-y-1">
+<div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[26px]">electric_bike</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-on-surface">Carbon-Neutral Fleet</span>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Delivered hot and crisp using electric e-cargo bikes in insulated compostable thermal wraps.
+          </p>
+<span class="font-label-sm text-label-sm text-primary font-bold mt-auto flex items-center gap-1">
+            Live Eco-Route Tracker <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Seasonal & Signature Bowls Menu Showcase -->
+<section id="menu" class="w-full py-space-xl lg:py-24 bg-surface">
+<div class="max-w-[1200px] mx-auto px-margin flex flex-col gap-space-lg">
+<!-- Section Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">restaurant_menu</span>
+<span class="font-label-md text-label-md text-primary uppercase font-bold tracking-wider">Seasonal &amp; Signatures</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Mindful Bowls Prepared To Order</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xl">
+            Chef-balanced macronutrient profiles. Each bowl combines prebiotic grain bases, active plant fats, and high-density organic proteins.
+          </p>
+</div>
+<!-- Filter Chips -->
+<div class="flex items-center gap-space-xs overflow-x-auto pb-2 md:pb-0 scrollbar-none" id="bowl-filter-group">
+<button class="filter-btn active bg-primary text-on-primary px-space-md py-1.5 rounded-full font-label-md text-label-md shadow-sm transition-all" data-category="all">
+            All Bowls (12)
+          </button>
+<button class="filter-btn bg-surface-container-high text-on-surface-variant hover:bg-surface-container-highest px-space-md py-1.5 rounded-full font-label-md text-label-md transition-all" data-category="high-protein">
+            High Protein
+          </button>
+<button class="filter-btn bg-surface-container-high text-on-surface-variant hover:bg-surface-container-highest px-space-md py-1.5 rounded-full font-label-md text-label-md transition-all" data-category="plant-based">
+            Plant Powered
+          </button>
+<button class="filter-btn bg-surface-container-high text-on-surface-variant hover:bg-surface-container-highest px-space-md py-1.5 rounded-full font-label-md text-label-md transition-all" data-category="keto">
+            Keto / Low-Carb
+          </button>
+</div>
+</div>
+<!-- Bowls Grid (4 Columns Desktop) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md" id="bowls-grid">
+<!-- Bowl 1 -->
+<div class="bowl-card group bg-surface-container-lowest rounded-2xl overflow-hidden shadow-[0_4px_20px_rgba(56,42,30,0.06)] hover:shadow-[0_12px_32px_rgba(56,42,30,0.12)] transition-all flex flex-col" data-category="high-protein">
+<div class="relative w-full h-56 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Artisanal coconut bowl filled with sliced seasoned grilled chicken breast, fluffy quinoa, bright green charred broccoli, and fresh avocado diced neatly with sesame seed garnishes under bright warm daylight." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwsjPrNx1rOiOHtJk5JI7fnCYNCVYx_XYiPqVHBSuvfUEyO2vwkymECwrwdz9dkqPbfpa3EU1u6qMz048gwvq1DKISMknUFLB1LUkztOz5QIW24l7uHO3rKIdiIlxc9roISDweHUUz3p-AK1G45nZD_W76E6CIwye_ThOjujSZyKrlOX2Z9l83XVWdg_ZardT3iDixK-9m3TadRgIqjWHL2VjMh_VLbAp5bulW40ui"/>
+<span class="absolute top-3 left-3 bg-primary text-on-primary font-label-sm text-label-sm px-space-sm py-0.5 rounded-full shadow-sm">
+              Chef's Pick
+            </span>
+<div class="absolute top-3 right-3 bg-surface/90 backdrop-blur-sm px-2 py-0.5 rounded-full flex items-center gap-1 font-label-sm text-label-sm text-on-surface">
+<span class="material-symbols-outlined text-[14px] text-secondary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span>4.9</span>
+</div>
+</div>
+<div class="p-space-md flex flex-col flex-1 gap-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm text-primary font-semibold bg-primary-fixed/40 px-2 py-0.5 rounded">Gluten-Free</span>
+<span class="font-label-sm text-label-sm text-secondary font-semibold bg-secondary-fixed/50 px-2 py-0.5 rounded">High Protein</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">
+              Warm Quinoa &amp; Chicken Bowl
+            </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+              Seared pastured chicken breast, fluffy quinoa, charred broccoli florets, creamy avocado, toasted sesame seeds, lemon-herb drizzle.
+            </p>
+<!-- Macros Bar -->
+<div class="bg-surface-container-low p-space-xs rounded-xl mt-space-xs flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span><strong>42g</strong> Pro</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span><strong>38g</strong> Carb</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span><strong>22g</strong> Fat</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="text-on-surface font-semibold">580 kcal</span>
+</div>
+<!-- Price and Action -->
+<div class="mt-auto pt-space-sm flex items-center justify-between">
+<div>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">₹390</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant block -mt-1">In coconut bowl</span>
+</div>
+<button class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center hover:bg-primary-container active:scale-95 shadow-md transition-all" onclick="handleQuickAdd('Warm Quinoa &amp; Roasted Chicken', 390)">
+<span class="material-symbols-outlined text-[20px]">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Bowl 2 -->
+<div class="bowl-card group bg-surface-container-lowest rounded-2xl overflow-hidden shadow-[0_4px_20px_rgba(56,42,30,0.06)] hover:shadow-[0_12px_32px_rgba(56,42,30,0.12)] transition-all flex flex-col" data-category="plant-based">
+<div class="relative w-full h-56 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Healthy vibrant vegan Green Goddess Avocado Bowl in a dark handcrafted bowl with massaged Tuscan kale, crisp sliced cucumbers, edamame beans, whole sliced avocado fan, microgreens, and creamy green herb vinaigrette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlttJ_XW-Ih5CMkbDS7t3zcJKAAAnYJjHpwHX693WQwkyxa98CjZFrgNc0O6mJ3VtnQiJ13x9DLoHhcFSE-uPH6M71IoYnEp_MRF1CtQjx1D7fUDeezRV9BM3qmge_Xi2Axr6YJlII3Ngbd71QLpvoM2jnicXL1PpY9ZZNvX05QnDtmOKaY3OMP_4WqZ_pV6asBQJW2-_7NYkptccKX6As1kzYQEDCiUHzNPNUW9qf"/>
+<span class="absolute top-3 left-3 bg-tertiary-container text-on-tertiary font-label-sm text-label-sm px-space-sm py-0.5 rounded-full shadow-sm">
+              100% Plant-Based
+            </span>
+<div class="absolute top-3 right-3 bg-surface/90 backdrop-blur-sm px-2 py-0.5 rounded-full flex items-center gap-1 font-label-sm text-label-sm text-on-surface">
+<span class="material-symbols-outlined text-[14px] text-secondary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span>4.8</span>
+</div>
+</div>
+<div class="p-space-md flex flex-col flex-1 gap-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm text-primary font-semibold bg-primary-fixed/40 px-2 py-0.5 rounded">Vegan</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-semibold bg-surface-container-high px-2 py-0.5 rounded">High Fiber</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">
+              Green Goddess Avocado
+            </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+              Ripe Haas avocado fan, shaved baby cucumbers, steam-poached edamame, curly kale, hemp hearts, and cold-pressed herb goddess dressing.
+            </p>
+<!-- Macros Bar -->
+<div class="bg-surface-container-low p-space-xs rounded-xl mt-space-xs flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span><strong>18g</strong> Pro</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span><strong>32g</strong> Carb</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span><strong>31g</strong> Fat</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="text-on-surface font-semibold">490 kcal</span>
+</div>
+<!-- Price and Action -->
+<div class="mt-auto pt-space-sm flex items-center justify-between">
+<div>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">₹380</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant block -mt-1">In coconut bowl</span>
+</div>
+<button class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center hover:bg-primary-container active:scale-95 shadow-md transition-all" onclick="handleQuickAdd('Green Goddess Avocado Bowl', 380)">
+<span class="material-symbols-outlined text-[20px]">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Bowl 3 -->
+<div class="bowl-card group bg-surface-container-lowest rounded-2xl overflow-hidden shadow-[0_4px_20px_rgba(56,42,30,0.06)] hover:shadow-[0_12px_32px_rgba(56,42,30,0.12)] transition-all flex flex-col" data-category="high-protein keto">
+<div class="relative w-full h-56 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Pan-seared teriyaki glazed wild Alaskan salmon fillet over black forbidden rice with steamed bok choy, pickled daikon radish, nori strips, and toasted sesame seeds in a warm earth-toned bowl." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDu1NUrN3hXgMFsUVwS5ZGdKw42nqkLcZtB1J4b6VYPUudj8h_uIwAaks3r-B99w-QzEbxMeAnXfOA6gZOawtO2dS86OjAQV1thWqDJn1IttNh2TyphqsUWWQ5RoGnRJzLvNgELbsqiRkD9cSQovKIyekEIdcy5f8aY4GV1QdrxOVRv8bAy1bUEZd5YBz71521nLyH5MKXgxCb72pBUi9g3iJ9v9NaKjrYKEmLMeb-m"/>
+<span class="absolute top-3 left-3 bg-secondary text-on-secondary font-label-sm text-label-sm px-space-sm py-0.5 rounded-full shadow-sm">
+              Wild Caught
+            </span>
+<div class="absolute top-3 right-3 bg-surface/90 backdrop-blur-sm px-2 py-0.5 rounded-full flex items-center gap-1 font-label-sm text-label-sm text-on-surface">
+<span class="material-symbols-outlined text-[14px] text-secondary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span>5.0</span>
+</div>
+</div>
+<div class="p-space-md flex flex-col flex-1 gap-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm text-secondary font-semibold bg-secondary-fixed/50 px-2 py-0.5 rounded">Omega-3 Rich</span>
+<span class="font-label-sm text-label-sm text-primary font-semibold bg-primary-fixed/40 px-2 py-0.5 rounded">38g Protein</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">
+              Teriyaki Wild Salmon Bowl
+            </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+              Wild Alaskan sockeye glazed with date-tamari teriyaki, forbidden black rice, charred bok choy, rainbow micro-radish, nori crisps.
+            </p>
+<!-- Macros Bar -->
+<div class="bg-surface-container-low p-space-xs rounded-xl mt-space-xs flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span><strong>38g</strong> Pro</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span><strong>44g</strong> Carb</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span><strong>20g</strong> Fat</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="text-on-surface font-semibold">610 kcal</span>
+</div>
+<!-- Price and Action -->
+<div class="mt-auto pt-space-sm flex items-center justify-between">
+<div>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">₹450</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant block -mt-1">In coconut bowl</span>
+</div>
+<button class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center hover:bg-primary-container active:scale-95 shadow-md transition-all" onclick="handleQuickAdd('Teriyaki Glazed Wild Salmon', 450)">
+<span class="material-symbols-outlined text-[20px]">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Bowl 4 -->
+<div class="bowl-card group bg-surface-container-lowest rounded-2xl overflow-hidden shadow-[0_4px_20px_rgba(56,42,30,0.06)] hover:shadow-[0_12px_32px_rgba(56,42,30,0.12)] transition-all flex flex-col" data-category="plant-based">
+<div class="relative w-full h-56 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Mediterranean nourishment bowl with crispy golden baked herb falafels, ruby pomegranate seeds, cucumber tomato salad, Kalamata olives, creamy tahini swirl, and fresh mint on warm grain base." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDG51rs4JgTpxWM-0rs_KMPsI3w-9xtW_oT-xnsZYeAc3SgJF92pqanDe8V6qUuZBEeG49FRu3kVhcp-Bpsevuq_iZrKeJXBjvvJaxleqZSnjdJqt-ffPv4i_cwtQggL1BMOp8zp88xL3ctwgLfpcub_vzaXXvqoEZGGfymTt-VIGGTfSiXFlJdtt0klHS_0IfcX0j5jfXWAwdCt_EtmH9TK6iOmQUptmKp88HnCL3d"/>
+<span class="absolute top-3 left-3 bg-tertiary-container text-on-tertiary font-label-sm text-label-sm px-space-sm py-0.5 rounded-full shadow-sm">
+              Artisan Batch
+            </span>
+<div class="absolute top-3 right-3 bg-surface/90 backdrop-blur-sm px-2 py-0.5 rounded-full flex items-center gap-1 font-label-sm text-label-sm text-on-surface">
+<span class="material-symbols-outlined text-[14px] text-secondary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span>4.7</span>
+</div>
+</div>
+<div class="p-space-md flex flex-col flex-1 gap-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm text-primary font-semibold bg-primary-fixed/40 px-2 py-0.5 rounded">Plant-Powered</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-semibold bg-surface-container-high px-2 py-0.5 rounded">Gut Health</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">
+              Mediterranean Falafel Tahini
+            </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+              Sprouted chickpea herb falafels, vine tomato &amp; cucumber tabouli, sumac pickled onions, rich sesame tahini, pomegranate jewels.
+            </p>
+<!-- Macros Bar -->
+<div class="bg-surface-container-low p-space-xs rounded-xl mt-space-xs flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span><strong>20g</strong> Pro</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span><strong>52g</strong> Carb</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span><strong>24g</strong> Fat</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="text-on-surface font-semibold">180 kcal</span>
+</div>
+<!-- Price and Action -->
+<div class="mt-auto pt-space-sm flex items-center justify-between">
+<div>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">₹350</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant block -mt-1">In coconut bowl</span>
+</div>
+<button class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center hover:bg-primary-container active:scale-95 shadow-md transition-all" onclick="handleQuickAdd('Mediterranean Falafel Tahini', 350)">
+<span class="material-symbols-outlined text-[20px]">add</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Footer -->
+<div class="flex flex-col sm:flex-row items-center justify-between bg-surface-container-low p-space-md rounded-2xl gap-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[28px]">checklist</span>
+<div>
+<span class="font-headline-sm text-headline-sm text-on-surface block">Have unique dietary goals?</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Adjust grains, fats, dressings, or substitute pastured poultry with tempeh in one tap.</span>
+</div>
+</div>
+<a class="bg-primary text-on-primary font-label-md text-label-md px-space-lg py-2.5 rounded-full hover:bg-primary-container transition-colors shrink-0 flex items-center gap-space-xs" data-path="build-your-own" href="#">
+<span>Start Customizing</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</section>
+<!-- Interactive 'How It Works' 3-Step Banner -->
+<section class="w-full py-space-xl lg:py-24 bg-surface-container-low/60 relative">
+<div class="max-w-[1200px] mx-auto px-margin flex flex-col gap-space-xl">
+<div class="text-center max-w-2xl mx-auto flex flex-col gap-space-xs">
+<span class="font-label-md text-label-md text-secondary font-bold uppercase tracking-wider">The Nourish Ritual</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Build Your Bowl in 3 Simple Steps</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          Crafting nutritional balance doesn't require compromise. Combine high-fiber foundations with whole food fuels tailored to your vitality.
+        </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg relative">
+<!-- Step 1 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-2xl shadow-[0_4px_16px_rgba(56,42,30,0.04)] flex flex-col gap-space-md relative overflow-hidden group">
+<div class="flex items-center justify-between">
+<span class="w-10 h-10 rounded-full bg-primary-fixed text-primary font-headline-sm text-headline-sm flex items-center justify-center font-bold">1</span>
+<span class="material-symbols-outlined text-outline-variant text-[28px] group-hover:text-primary transition-colors">grain</span>
+</div>
+<div class="w-full h-40 rounded-xl overflow-hidden bg-surface-container-low">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Close-up overhead of slow-cooked warm Andean quinoa grains and organic wild black forbidden rice in wooden prep bowls on a marble counter." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5EFnYHwrhOPCnQlUDaLB6pkCFV5BmnQ-T16srVNxt1Rd6KKRhqb5PLBtgpXtBmPqxC2SdMmF4fQTFF130orSlki0drjllN-scWuRydEmRRnPCYZWlbIyWEgLBqnojMsMntwTS_7a1IZ50nB-ckBffo8ibvkOk_H0AfK5keYm2z71eoM90vW1GsYn2ZJ3t_sfkYG_PbaVPWhaIeqhEeAWqeJch-4xMyEy1vEwDEzLr"/>
+</div>
+<div class="flex flex-col gap-space-xs">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Pick Wholesome Grains</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Organic tricolor quinoa, cauliflower rice, wild heirloom forbidden rice, or massaged Tuscan lacinato kale.
+            </p>
+</div>
+<div class="pt-space-xs flex flex-wrap gap-1">
+<span class="font-label-sm text-label-sm bg-surface-container px-2 py-0.5 rounded text-on-surface-variant">Low Glycemic</span>
+<span class="font-label-sm text-label-sm bg-surface-container px-2 py-0.5 rounded text-on-surface-variant">Prebiotic</span>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-2xl shadow-[0_4px_16px_rgba(56,42,30,0.04)] flex flex-col gap-space-md relative overflow-hidden group">
+<div class="flex items-center justify-between">
+<span class="w-10 h-10 rounded-full bg-secondary-fixed text-secondary font-headline-sm text-headline-sm flex items-center justify-center font-bold">2</span>
+<span class="material-symbols-outlined text-outline-variant text-[28px] group-hover:text-secondary transition-colors">lunch_dining</span>
+</div>
+<div class="w-full h-40 rounded-xl overflow-hidden bg-surface-container-low">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Pan-seared golden chicken breast medallions on a clean carving board next to organic cubed tempeh and grilled wild salmon with culinary tongs." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTBcG8qcqyy9TpokCn9J7XMXL0jnoQdZLQnl1JlPRTJT3H7aUzwia-ZLgmRrtfNXZRAYKoN9ACe9vhV3qVLUu_nTmXx2jAa-M0eZKxcL767n8xsVXX24xeZFqZyMKu47TwZ8W6tZnyOt3nGcHCY-eGSUOazzgk-Ui9EvzK0czdq9a0EHu8dAz9t368-kN9qZohjkUPKfEnrlmDpKsJpX1xoWlXxAhd8O813DYuosoV"/>
+</div>
+<div class="flex flex-col gap-space-xs">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Add Sourced Protein</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Slow-roasted pastured chicken breast, wild Alaskan salmon, sprouted falafels, or organic fermented miso tempeh.
+            </p>
+</div>
+<div class="pt-space-xs flex flex-wrap gap-1">
+<span class="font-label-sm text-label-sm bg-surface-container px-2 py-0.5 rounded text-on-surface-variant">Antibiotic-Free</span>
+<span class="font-label-sm text-label-sm bg-surface-container px-2 py-0.5 rounded text-on-surface-variant">30g+ Fuel</span>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-2xl shadow-[0_4px_16px_rgba(56,42,30,0.04)] flex flex-col gap-space-md relative overflow-hidden group">
+<div class="flex items-center justify-between">
+<span class="w-10 h-10 rounded-full bg-tertiary-fixed text-tertiary font-headline-sm text-headline-sm flex items-center justify-center font-bold">3</span>
+<span class="material-symbols-outlined text-outline-variant text-[28px] group-hover:text-tertiary transition-colors">spa</span>
+</div>
+<div class="w-full h-40 rounded-xl overflow-hidden bg-surface-container-low">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Fresh avocado cubes being sprinkled with toasted white and black sesame seeds and drizzled with a rich green herb vinaigrette from an artisanal ceramic cruet." src="https://lh3.googleusercontent.com/aida-public/AB6AXuApwt5bUnTcxhgCZWfyQsNOAwb_IqePszxdA_SwxGy6BQ3rSsc5TK2c0IKKJKHBamqccUdqKuWq5pmotnYkIYvzEM-yBH-Q_VyZ34dImmiq6He1yRd6_jV0F8MFA8Mrkt2e-QBlNm73YBs3shL62WHr36of5z3piTbezTsBA7nkDVLk7eQS2G9HcMLwIWVWqhwUBapBJRW-funIHiBp-ZWGz1bIbdi7U1sipdeekGwa"/>
+</div>
+<div class="flex flex-col gap-space-xs">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Crown With Superfoods</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Charred broccoli florets, creamy avocado, toasted seeds, microgreens, and scratch-made zero-sugar cold-pressed dressings.
+            </p>
+</div>
+<div class="pt-space-xs flex flex-wrap gap-1">
+<span class="font-label-sm text-label-sm bg-surface-container px-2 py-0.5 rounded text-on-surface-variant">Cold-Pressed Oils</span>
+<span class="font-label-sm text-label-sm bg-surface-container px-2 py-0.5 rounded text-on-surface-variant">Raw Botanicals</span>
+</div>
+</div>
+</div>
+<!-- Live Customizer Teaser Banner -->
+<div class="w-full bg-gradient-to-r from-primary to-primary-container text-on-primary rounded-3xl p-space-lg lg:p-space-xl flex flex-col md:flex-row items-center justify-between gap-space-lg shadow-xl">
+<div class="flex flex-col gap-space-xs max-w-xl">
+<div class="flex items-center gap-space-xs text-tertiary-fixed font-label-sm text-label-sm uppercase tracking-wider font-semibold">
+<span class="material-symbols-outlined text-[18px]">magic_button</span>
+<span>Interactive Bowl Builder</span>
+</div>
+<span class="font-headline-lg text-headline-lg">Want to assemble your own masterpiece?</span>
+<p class="font-body-md text-body-md opacity-90">
+            Real-time calorie &amp; macro calculations updated dynamically with every single leaf, grain, and seed you add.
+          </p>
+</div>
+<a class="bg-surface-container-lowest text-primary font-headline-sm text-headline-sm px-space-xl py-space-md rounded-full shadow-lg hover:bg-surface-container hover:scale-105 transition-all shrink-0 flex items-center gap-space-xs" data-path="build-your-own" href="#">
+<span>Open Customizer Studio</span>
+<span class="material-symbols-outlined text-[20px]">brush</span>
+</a>
+</div>
+</div>
+</section>
+<!-- Verified Customer Review Spotlight -->
+<section id="reviews" class="w-full py-space-xl lg:py-24 bg-surface">
+<div class="max-w-[1200px] mx-auto px-margin flex flex-col gap-space-xl">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-md text-label-md text-primary font-bold uppercase tracking-wider">Mindful Voices</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Loved By Over 2,400 Clean Eaters</h2>
+</div>
+<div class="flex items-center gap-space-xs bg-surface-container px-space-md py-space-xs rounded-full">
+<span class="font-label-lg text-label-lg font-bold text-on-surface">Overall Score: 4.92 / 5</span>
+<span class="text-on-surface-variant font-body-sm text-body-sm">• TrustVerified™</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<!-- Review 1 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-2xl shadow-[0_4px_16px_rgba(56,42,30,0.05)] flex flex-col justify-between gap-space-md">
+<div class="flex flex-col gap-space-sm">
+<div class="flex text-secondary-container">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface italic">
+              "The Warm Quinoa &amp; Roasted Chicken bowl has genuinely replaced my lazy takeout routines. The chicken actually tastes like farm poultry—tender, well-charred—and the coconut shell bowl is gorgeous."
+            </p>
+</div>
+<div class="flex items-center gap-space-sm pt-space-xs border-t border-surface-container-high">
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center font-bold text-primary">
+              EM
+            </div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Elena Morales</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Verified Subscriber • Downtown 10001</span>
+</div>
+</div>
+</div>
+<!-- Review 2 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-2xl shadow-[0_4px_16px_rgba(56,42,30,0.05)] flex flex-col justify-between gap-space-md">
+<div class="flex flex-col gap-space-sm">
+<div class="flex text-secondary-container">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface italic">
+              "Finally, a clean bowl spot that doesn't sneak cane sugar and seed oils into dressings. As a marathon runner, hitting 42g of clean protein without feeling bloated after lunch is game changing."
+            </p>
+</div>
+<div class="flex items-center gap-space-sm pt-space-xs border-t border-surface-container-high">
+<div class="w-10 h-10 rounded-full bg-secondary-fixed flex items-center justify-center font-bold text-secondary">
+              DC
+            </div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">David Chen</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Triathlete • Weekly Orderer</span>
+</div>
+</div>
+</div>
+<!-- Review 3 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-2xl shadow-[0_4px_16px_rgba(56,42,30,0.05)] flex flex-col justify-between gap-space-md">
+<div class="flex flex-col gap-space-sm">
+<div class="flex text-secondary-container">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface italic">
+              "Ordered catering for our design studio workshop. Everyone was ecstatic—especially our gluten-free and vegan teammates. Delivered right on the minute, warm and fresh."
+            </p>
+</div>
+<div class="flex items-center gap-space-sm pt-space-xs border-t border-surface-container-high">
+<div class="w-10 h-10 rounded-full bg-tertiary-fixed flex items-center justify-center font-bold text-tertiary">
+              SL
+            </div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Sophia Lin</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Creative Director • Studio Forma</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Community & Instagram Gallery Strip -->
+<section class="w-full py-space-xl bg-surface-container-lowest overflow-hidden">
+<div class="max-w-[1200px] mx-auto px-margin flex flex-col gap-space-lg">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm">
+<div>
+<span class="font-label-md text-label-md text-primary font-bold uppercase tracking-wider">#NourishEveryDay</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">From Our Kitchen To Your Table</h2>
+</div>
+<a class="font-label-md text-label-md text-secondary hover:underline flex items-center gap-1" href="#">
+          Follow @nourishbowlco on Instagram <span class="material-symbols-outlined text-[16px]">north_east</span>
+</a>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-space-sm">
+<div class="relative group aspect-square rounded-xl overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Top down photo of a customer enjoying a warm chicken and quinoa coconut bowl with chopsticks on an airy modern kitchen counter with morning sunlight." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQpLl0DbXVYTcw2SckvlNKhF7adFIOt2HHM7DIQ7aOCXOLYp50xHpWgY_vuEy6IXJDSD1gmhXrxdahrGktVx3ghkOR0mJl8031P2E6C0Jgjpvo9_hrXleP625xCX7W-Aarm9hCHSZg5iF3ch55XynTS8_45tv9Ken5li4rtiyS-7u53IZrkafavzL4V-lznD77sblMgELNeoJS3Zl2ciGE_ucC8posoiUlpw0dwWyT"/>
+<div class="absolute inset-0 bg-primary/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[24px]">favorite</span>
+</div>
+</div>
+<div class="relative group aspect-square rounded-xl overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Artisanal stack of carved reclaimed coconut wooden bowls next to raw linen and fresh organic limes on a rustic farmhouse table." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlsuK4DtnO4Lm0eFP3EzAVyKWgE9BG_kTnKfn478cXylzkhHzb6HsnH5kSKEkYnIu7kTUoC3M54RIW3rak0toQh2p_keXa4UjCad5MVkft8jVWb8Pf1yNMoF1ljpBbMu4wpMLyA8HX_twbDmDAQuw6eDxZnEWgZublyKXwxGezZ6R8Lxbaim638d1yq-EbvTDnSzB2hiPSK3lToDlMsABVsHaU5iZe2PAlQPUlhZU9"/>
+<div class="absolute inset-0 bg-primary/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[24px]">favorite</span>
+</div>
+</div>
+<div class="relative group aspect-square rounded-xl overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Farmer smiling holding a basket full of freshly picked dark Tuscan kale leaves and vibrant red radishes in a sunlit organic greenhouse." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZd63JYAV5mtZiK8qJt8Pymp4o2103mqfnrqjVdzerEyjCyz3IM5HhQPCLLS9xNEtffS1LenjsIEkazyE85O8-4WIJA7Ry6zIrrkhAJCcHEV_waiKpkSEziecj-EdoBVzsm1UzZowVxePN1EFqSnMNDbHn9cXUTFoV0Y85-_6QsQQdCdL0eswqoE-ywk1HgxNRvA7YFFxG7218I2aUQRBfRjDHneKccJR90_5Vy-uT"/>
+<div class="absolute inset-0 bg-primary/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[24px]">favorite</span>
+</div>
+</div>
+<div class="relative group aspect-square rounded-xl overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Chef delicately garnishing seared salmon bowl with black sesame seeds using fine kitchen tweezers in a bright open-concept kitchen." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBf-Wg81FbywtTSWrwopLpddISb9i1tLCu09zrpOrmU87BbZQBzMRYpSkeCfUbl91ecSiUaZ8i6qxuQ-BYs9SUWQ32faGiiBVpvHPoW_zs8cjZYsjC4YpE5p7Q6FN7HFCga03DywMRzAY5mna3OypTOeE6F0LsFe2sp1lnAfdhIgQKeEZceYWzwmuyZA0YneHa9ISi9wTssqdhn5Eakr9Td6ylu2qs7uy_Xv6Id0FL9"/>
+<div class="absolute inset-0 bg-primary/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[24px]">favorite</span>
+</div>
+</div>
+<div class="relative group aspect-square rounded-xl overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Balance Bite eco-friendly insulated kraft paper carry tote bag standing on an electric bicycle delivery rack outside a contemporary office brick loft." src="https://lh3.googleusercontent.com/aida-public/AB6AXuASre-khYzWMdv-p2rakbwIGHnuDGM90j5nV46Qn_uNNoEfhQ1rAjoxurHETGKhivDTcnNX_kNdQMWQfQdJo4L8K0AOKOIeJtNjDi10I4G6ZBKAKdZFj02RsSxmKk7EKXcljEfKoPzIbwDnseqjMQvYlvWtekSqdRhLW-wyHo2W2ScTe_ZjZrRY5cTL7cdJGR7qJzttBL-ieJvbB1pvggobE7lw3Ydiay4juetW5Tq8"/>
+<div class="absolute inset-0 bg-primary/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[24px]">favorite</span>
+</div>
+</div>
+<div class="relative group aspect-square rounded-xl overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Close up macro detail of cold-pressed herb vinaigrette dressing being poured smoothly over sliced ripe creamy avocado pieces." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyH4bHChx9uBi74ddBsEIUkXe76C77xc1Eg0DvKoO5773bYBoxXtvbW75asgsg7Nrkx9g8H_Fu2vXpa76c2m_JwlhSAhkeMbTTDyKyEO1vYoVF4bZxgIP3s1QCbMjfHKU78W0UGQRc_guxJWr_8OpmuMMAdnKlaxpum33_Kue527Ug2q0ucs657Xs-Ii_Y5EI0czndR71oy3ue6TYdT_29WSJj9OGbk_GgaRna1YfP"/>
+<div class="absolute inset-0 bg-primary/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[24px]">favorite</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Toast Notification Element for Adding Items -->
+<div class="fixed bottom-6 right-6 z-50 transform translate-y-32 opacity-0 transition-all duration-300 pointer-events-none bg-inverse-surface text-inverse-on-surface px-space-md py-space-sm rounded-2xl shadow-2xl flex items-center gap-space-sm" id="quick-add-toast">
+<div class="w-8 h-8 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-inverse-on-surface" id="toast-title">Added to Bag</span>
+<span class="font-body-sm text-body-sm text-inverse-on-surface/80" id="toast-desc">1x Signature Bowl</span>
+</div>
+</div>
+<script>
+    // Quick Add Micro-interaction
+    function handleQuickAdd(name, price) {
+      const toast = document.getElementById('quick-add-toast');
+      const toastTitle = document.getElementById('toast-title');
+      const toastDesc = document.getElementById('toast-desc');
+      
+      if (toast && toastTitle && toastDesc) {
+        toastTitle.innerText = "Added to Bag";
+        toastDesc.innerText = `${name} • ₹${Math.round(price).toLocaleString('en-IN')}`;
+        
+        toast.classList.remove('translate-y-32', 'opacity-0');
+        toast.classList.add('translate-y-0', 'opacity-100');
+
+        setTimeout(() => {
+          toast.classList.add('translate-y-32', 'opacity-0');
+          toast.classList.remove('translate-y-0', 'opacity-100');
+        }, 2800);
+      }
+    }
+
+    // Category Filter Behavior
+    const filterBtns = document.querySelectorAll('#bowl-filter-group .filter-btn');
+    const bowlCards = document.querySelectorAll('#bowls-grid .bowl-card');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Reset classes
+        filterBtns.forEach(b => {
+          b.classList.remove('bg-primary', 'text-on-primary', 'shadow-sm');
+          b.classList.add('bg-surface-container-high', 'text-on-surface-variant');
+        });
+
+        // Set active class
+        btn.classList.add('bg-primary', 'text-on-primary', 'shadow-sm');
+        btn.classList.remove('bg-surface-container-high', 'text-on-surface-variant');
+
+        const cat = btn.getAttribute('data-category');
+
+        bowlCards.forEach(card => {
+          const cardCats = card.getAttribute('data-category') || '';
+          if (cat === 'all' || cardCats.includes(cat)) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+</div></main><footer class="w-full bg-surface-container py-space-xl shadow-[0_-1px_12px_rgba(56,42,30,0.03)]"><div class="max-w-[1200px] mx-auto px-margin"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-space-xl pb-space-xl"><div class="lg:col-span-2 flex flex-col gap-space-md"><div class="flex items-center gap-space-xs text-primary"><span class="material-symbols-outlined text-[28px] text-primary">potted_plant</span><span class="font-headline-md text-headline-md tracking-tight text-primary">Balance Bite</span></div><p class="font-body-md text-body-md text-on-surface-variant max-w-sm">Crafting mindful nourishment using locally sourced whole ingredients, regenerative grains, and chef-curated dressings for conscious eaters.</p><div class="flex flex-col gap-space-xs pt-space-xs"><span class="font-label-md text-label-md text-on-surface">Stay rooted with seasonal recipes &amp; exclusive drops</span><div class="flex items-center gap-space-xs max-w-sm"><input class="w-full bg-surface-container-lowest font-body-sm text-body-sm text-on-surface placeholder:text-on-surface-variant px-space-md py-space-sm rounded-full focus:outline-none shadow-[0_1px_4px_rgba(56,42,30,0.04)] focus:shadow-[0_0_0_2px_#386641]" placeholder="Enter your email address" type="email"/><button class="bg-primary text-on-primary font-label-md text-label-md px-space-lg py-space-sm rounded-full hover:bg-primary-container transition-colors shrink-0" type="button" onclick="window.joinNewsletter(this)">Join</button></div></div></div><div class="flex flex-col gap-space-sm"><span class="font-headline-sm text-headline-sm text-on-surface">Menu &amp; Bowls</span><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="menu-and-bowls" href="#">Warm Harvest Bowls</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="menu-and-bowls" href="#">Seasonal Signatures</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="build-your-own" href="#">Custom Bowl Builder</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="menu-and-bowls" href="#">Cold-Pressed Tonics</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="menu-and-bowls" href="#">Nutritional Calculator</a></div><div class="flex flex-col gap-space-sm"><span class="font-headline-sm text-headline-sm text-on-surface">Conscious Living</span><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="our-philosophy" href="#">Our Philosophy</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="our-philosophy" href="#">Regenerative Farms</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="our-philosophy" href="#">Zero Food-Waste Goal</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="catering" href="#">Gatherings &amp; Catering</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="home" href="#">Sustainability Report</a></div><div class="flex flex-col gap-space-sm"><span class="font-headline-sm text-headline-sm text-on-surface">Impact &amp; Trust</span><div class="flex flex-col gap-space-xs"><div class="flex items-center gap-space-xs text-on-surface-variant"><span class="material-symbols-outlined text-[18px] text-tertiary-container">eco</span><span class="font-label-sm text-label-sm">100% Compostable Packaging</span></div><div class="flex items-center gap-space-xs text-on-surface-variant"><span class="material-symbols-outlined text-[18px] text-tertiary-container">verified</span><span class="font-label-sm text-label-sm">Certified B Corporation</span></div><div class="flex items-center gap-space-xs text-on-surface-variant"><span class="material-symbols-outlined text-[18px] text-tertiary-container">agriculture</span><span class="font-label-sm text-label-sm">Non-GMO Partner Farms</span></div><div class="flex items-center gap-space-xs text-on-surface-variant"><span class="material-symbols-outlined text-[18px] text-tertiary-container">energy_savings_leaf</span><span class="font-label-sm text-label-sm">Carbon Neutral Delivery</span></div></div></div></div><div class="flex flex-col md:flex-row items-center justify-between pt-space-lg gap-space-md bg-surface-container-high/40 rounded-xl px-space-md py-space-sm"><span class="font-body-sm text-body-sm text-on-surface-variant">© 2025 Balance Bite Co. Mindful nourishment for a flourishing earth. All rights reserved.</span><div class="flex items-center gap-space-md"><a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors" data-path="home" href="#">Privacy Policy</a><a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors" data-path="home" href="#">Terms of Service</a><a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors" data-path="home" href="#">Dietary Disclosures</a></div></div></div></footer></body></html>

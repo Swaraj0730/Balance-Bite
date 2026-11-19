@@ -20,10 +20,7 @@
   const preloaderCount = document.getElementById('preloader-count');
   const preloaderSkipBtn = document.getElementById('preloader-skip-btn');
 
-  const canvas = document.getElementById('animation-canvas') || document.createElement('canvas');
-  canvas.id = 'animation-canvas';
-  // Keep the frame sequence behind the whole site, not clipped to the intro section.
-  if (canvas.parentElement !== document.body) document.body.prepend(canvas);
+  const canvas = document.getElementById('animation-canvas');
   const ctx = canvas.getContext('2d', { alpha: false });
   const scrollTrack = document.getElementById('scroll-track');
 
@@ -95,7 +92,6 @@
   }
 
   function updatePreloaderProgress() {
-    if (!preloaderBar || !preloaderPercent || !preloaderCount) return;
     const percent = Math.min(100, Math.round((loadedCount / TOTAL_FRAMES) * 100));
     preloaderBar.style.width = `${percent}%`;
     preloaderPercent.textContent = `${percent}%`;
@@ -114,18 +110,21 @@
     if (isReady) return;
     isReady = true;
     setTimeout(() => {
-      if (preloader) preloader.classList.add('loaded');
+      preloader.classList.add('loaded');
       renderFrame(0, true);
     }, 200);
   }
 
-  if (preloaderSkipBtn) preloaderSkipBtn.addEventListener('click', finishLoading);
+  preloaderSkipBtn.addEventListener('click', () => {
+    finishLoading();
+  });
 
   // --- 2. HIGH-DPI CANVAS RENDERING ---
   function resizeCanvas() {
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
-    const width = window.innerWidth;
-    const height = window.innerHeight;
+    const parent = canvas.parentElement;
+    const width = (parent && parent.clientWidth) || window.innerWidth;
+    const height = (parent && parent.clientHeight) || window.innerHeight;
 
     canvas.width = Math.round(width * dpr);
     canvas.height = Math.round(height * dpr);
@@ -182,11 +181,6 @@
 
   // --- 3. SCROLL INTERACTION & LERP ENGINE ---
   function computeScrollProgress() {
-    if (!scrollTrack) {
-      const scrollableDistance = document.documentElement.scrollHeight - window.innerHeight;
-      if (scrollableDistance <= 0) return 0;
-      return Math.max(0, Math.min(1, window.scrollY / scrollableDistance));
-    }
     const rect = scrollTrack.getBoundingClientRect();
     const scrollableDistance = scrollTrack.offsetHeight - window.innerHeight;
     if (scrollableDistance <= 0) return 0;

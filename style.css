@@ -211,43 +211,14 @@ body > header,
    CANVAS & SCROLL TRACK
    ========================================================================== */
 #animation-canvas {
-  position: fixed;
-  inset: 0;
-  z-index: 0;
   display: block;
-  width: 100vw;
-  height: 100vh;
-  pointer-events: none;
+  width: 100%;
+  height: 100%;
   image-rendering: -webkit-optimize-contrast;
   image-rendering: high-quality;
   transform: translateZ(0);
   backface-visibility: hidden;
 }
-
-body { background: transparent !important; }
-body > :not(#animation-canvas):not(#preloader):not(#site-header) { position: relative; z-index: 1; }
-#site-header { z-index: 100 !important; }
-#scroll-track { background: transparent !important; z-index: 1; }
-#scroll-track > .sticky { height: 100vh; background: transparent !important; }
-#initial-hero-overlay { background: radial-gradient(ellipse at center, rgba(10, 24, 17, .48), rgba(10, 24, 17, .12) 65%, transparent); }
-#website-content, main { background: transparent !important; }
-#website-content > div > section,
-main > div > section {
-  background-color: rgba(247, 248, 242, .68) !important;
-  -webkit-backdrop-filter: saturate(145%) blur(18px);
-  backdrop-filter: saturate(145%) blur(18px);
-}
-#website-content [class*="rounded-xl"][class*="bg-surface-container-lowest"],
-main [class*="rounded-xl"][class*="bg-surface-container-lowest"],
-#website-content [class*="rounded-2xl"][class*="bg-surface-container-lowest"],
-main [class*="rounded-2xl"][class*="bg-surface-container-lowest"] {
-  background-color: rgba(255, 255, 255, .72) !important;
-  border: 1px solid rgba(255, 255, 255, .72);
-  box-shadow: 0 14px 40px rgba(22, 42, 27, .10), inset 0 1px 0 rgba(255,255,255,.82);
-  -webkit-backdrop-filter: saturate(160%) blur(20px);
-  backdrop-filter: saturate(160%) blur(20px);
-}
-footer { background: rgba(247, 248, 242, .82) !important; -webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px); }
 
 /* ==========================================================================
    INITIAL HERO OVERLAY — large "Balance Bite" title remains through the sequence
@@ -384,36 +355,4 @@ footer { background: rgba(247, 248, 242, .82) !important; -webkit-backdrop-filte
   .initial-title {
     font-size: clamp(2.5rem, 11vw, 3.5rem);
   }
-}
-
-/* Layout safety and touch friendly controls across all pages. */
-*, *::before, *::after { box-sizing: border-box; }
-html { overflow-x: hidden; }
-body { min-width: 320px; overflow-x: hidden; }
-img, video, canvas, iframe { max-width: 100%; }
-input, select, textarea, button { max-width: 100%; font: inherit; }
-button, a { -webkit-tap-highlight-color: transparent; }
-main { width: 100%; min-width: 0; }
-main > div, main section, main article { min-width: 0; }
-
-@media (max-width: 768px) {
-  #site-header > div { min-height: 68px; height: auto; padding-inline: 14px; gap: 10px; }
-  #site-header .gap-space-lg { gap: 10px; }
-  #site-header .gap-space-md { gap: 8px; }
-  .mobile-nav-panel { top: 76px; }
-  main { padding-top: 68px; }
-  #website-content { padding-top: 0; }
-  #animation-canvas { height: 100dvh; }
-  #initial-hero-overlay { padding: 24px 18px; }
-  footer { overflow-wrap: anywhere; }
-}
-
-@media (max-width: 480px) {
-  #site-header > div { padding-inline: 10px; }
-  #site-header .font-headline-md { font-size: 17px; }
-  #site-header .gap-space-md { gap: 5px; }
-  .mobile-nav-toggle { width: 38px; height: 38px; }
-  #website-content > div > section,
-  main > div > section { padding-inline: 14px; }
-  #animation-canvas { object-fit: cover; }
 }

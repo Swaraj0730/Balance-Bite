@@ -1,6 +1,7 @@
 /**
  * BALANCE BITE — Clean Immersive Scroll Animation Engine
- * 190 1080p frames, streamed into a bounded cache for mobile memory safety.
+ * 190 pristine 1080p Master Quality frames (99% JPEG quality).
+ * No HUD, no chapters, no overlays — pure cinematic scroll experience.
  */
 
 (function () {
@@ -30,17 +31,12 @@
 
   // --- STATE ---
   const images = new Array(TOTAL_FRAMES);
-  const queuedFrames = new Set();
-  const MAX_ACTIVE_LOADS = window.matchMedia('(max-width: 768px)').matches ? 3 : 6;
-  const MAX_CACHED_FRAMES = window.matchMedia('(max-width: 768px)').matches ? 8 : 16;
   let loadedCount = 0;
-  let activeLoads = 0;
   let isReady = false;
 
   let currentProgress = 0;
   let targetProgress = 0;
   let currentRenderedFrame = -1;
-  let desiredFrameIndex = 0;
 
   // --- HELPER: FRAME PATH GENERATOR ---
   function getFramePath(index) {
@@ -54,70 +50,48 @@
     ctx.imageSmoothingQuality = 'high';
   }
 
-  // --- 1. ON-DEMAND FRAME LOADING ---
-  function trimFrameCache() {
-    const cached = [];
-    images.forEach((img, index) => {
-      if (img && img.complete && img.naturalWidth) cached.push(index);
-    });
-    while (cached.length > MAX_CACHED_FRAMES) {
-      let farthestPosition = -1;
-      let farthestDistance = -1;
-      cached.forEach((index, position) => {
-        if (index === currentRenderedFrame) return;
-        const distance = Math.abs(index - desiredFrameIndex);
-        if (distance > farthestDistance) {
-          farthestDistance = distance;
-          farthestPosition = position;
-        }
-      });
-      if (farthestPosition < 0) break;
-      images[cached[farthestPosition]] = null;
-      cached.splice(farthestPosition, 1);
-    }
-  }
+  // --- 1. PRELOADING MASTER FRAMES ---
+  function initPreloader() {
+    let initialRendered = false;
 
-  function pumpFrameQueue() {
-    while (activeLoads < MAX_ACTIVE_LOADS && queuedFrames.size) {
-      const nextIndex = [...queuedFrames].sort((a, b) =>
-        Math.abs(a - desiredFrameIndex) - Math.abs(b - desiredFrameIndex)
-      )[0];
-      queuedFrames.delete(nextIndex);
-      if (images[nextIndex]) continue;
+    const firstImg = new Image();
+    firstImg.src = getFramePath(0);
+    images[0] = firstImg;
+    firstImg.onload = () => {
+      loadedCount++;
+      updatePreloaderProgress();
+      if (!initialRendered) {
+        initialRendered = true;
+        renderFrame(0, true);
+      }
+    };
 
+    const remainingIndices = Array.from({ length: TOTAL_FRAMES - 1 }, (_, i) => i + 1);
+    const BATCH_SIZE = 16;
+    let activeIndex = 0;
+
+    function loadNext() {
+      if (activeIndex >= remainingIndices.length) return;
+      const index = remainingIndices[activeIndex++];
       const img = new Image();
-      images[nextIndex] = img;
-      activeLoads++;
+      img.src = getFramePath(index);
       img.onload = () => {
-        activeLoads--;
+        images[index] = img;
         loadedCount++;
-        trimFrameCache();
         updatePreloaderProgress();
-        if (!preloader && loadedCount >= 4) finishLoading();
-        if (nextIndex === desiredFrameIndex) renderFrame(nextIndex, true);
-        pumpFrameQueue();
+        loadNext();
       };
       img.onerror = () => {
-        activeLoads--;
-        images[nextIndex] = null;
+        images[index] = images[index - 1] || firstImg;
         loadedCount++;
         updatePreloaderProgress();
-        if (!preloader && loadedCount >= 4) finishLoading();
-        pumpFrameQueue();
+        loadNext();
       };
-      img.src = getFramePath(nextIndex);
     }
-  }
 
-  function requestFrame(index) {
-    if (index < 0 || index >= TOTAL_FRAMES || images[index]) return;
-    queuedFrames.add(index);
-    pumpFrameQueue();
-  }
-
-  function initPreloader() {
-    // Warm only a short opening segment; later frames load near the scroll position.
-    for (let index = 0; index < 12; index++) requestFrame(index);
+    for (let i = 0; i < BATCH_SIZE; i++) {
+      loadNext();
+    }
   }
 
   function updatePreloaderProgress() {
@@ -127,11 +101,11 @@
     preloaderPercent.textContent = `${percent}%`;
     preloaderCount.textContent = `${loadedCount} / ${TOTAL_FRAMES}`;
 
-    if (loadedCount >= 4 && preloaderSkipBtn.style.display !== 'inline-block') {
+    if (loadedCount >= 30 && preloaderSkipBtn.style.display !== 'inline-block') {
       preloaderSkipBtn.style.display = 'inline-block';
     }
 
-    if (loadedCount >= 12) {
+    if (loadedCount >= TOTAL_FRAMES) {
       finishLoading();
     }
   }
@@ -165,9 +139,6 @@
 
   window.addEventListener('resize', resizeCanvas, { passive: true });
   window.addEventListener('orientationchange', resizeCanvas, { passive: true });
-  if (window.visualViewport) {
-    window.visualViewport.addEventListener('resize', resizeCanvas, { passive: true });
-  }
 
   function renderFrame(frameIndex, forceRedraw = false) {
     if (!forceRedraw && frameIndex === currentRenderedFrame) return;
@@ -227,7 +198,6 @@
   window.addEventListener('scroll', () => {
     targetProgress = computeScrollProgress();
   }, { passive: true });
-  targetProgress = computeScrollProgress();
 
   // --- 4. UI STATE UPDATES (keep the brand over the frame sequence) ---
   function updateUIState(progress) {
@@ -253,11 +223,6 @@
       Math.max(0, Math.round(currentProgress * (TOTAL_FRAMES - 1)))
     );
 
-    desiredFrameIndex = frameIndex;
-    requestFrame(frameIndex);
-    const direction = targetProgress >= currentProgress ? 1 : -1;
-    requestFrame(frameIndex + direction);
-    requestFrame(frameIndex + direction * 2);
     renderFrame(frameIndex);
     updateUIState(currentProgress);
 

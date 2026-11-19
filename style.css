@@ -229,7 +229,6 @@ body > :not(#animation-canvas):not(#preloader):not(#site-header) { position: rel
 #site-header { z-index: 100 !important; }
 #scroll-track { background: transparent !important; z-index: 1; }
 #scroll-track > .sticky { height: 100vh; background: transparent !important; }
-#scroll-track > .sticky { touch-action: pan-y; }
 #initial-hero-overlay { background: radial-gradient(ellipse at center, rgba(10, 24, 17, .48), rgba(10, 24, 17, .12) 65%, transparent); }
 #website-content, main { background: transparent !important; }
 #website-content > div > section,
